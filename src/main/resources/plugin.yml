@@ -1,0 +1,6 @@
+name: Persistence
+version: ${project.version}
+main: com.hiddentech.persistantance.Persistence
+api-version: 1.16
+authors: [hidden1nin]
+description: Tool for saving objects across restarts
