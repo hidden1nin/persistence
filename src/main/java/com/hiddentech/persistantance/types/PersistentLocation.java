@@ -4,4 +4,5 @@ import org.bukkit.Location;
 
 public interface PersistentLocation extends Persistent {
     Location getLocation();
+    default boolean removeAir(){return true;}
 }

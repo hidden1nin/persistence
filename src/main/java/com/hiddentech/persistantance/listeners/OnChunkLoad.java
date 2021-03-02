@@ -1,4 +1,4 @@
-package com.hiddentech.persistantance;
+package com.hiddentech.persistantance.listeners;
 
 import org.bukkit.event.Listener;
 

@@ -1,24 +1,22 @@
-package com.hiddentech.persistantance;
+package com.hiddentech.persistantance.config;
 
+import com.hiddentech.persistantance.Persistence;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
 
-public class Config {
-
+public class PlayerConfig {
     private final String name;
     private final File file;
     private final FileConfiguration fileConfiguration;
-    private int ID;
-    public Config(String name, File file, FileConfiguration fileConfiguration){
+    public PlayerConfig(String name, File file, FileConfiguration fileConfiguration){
 
         this.name = name;
         this.file = file;
         this.fileConfiguration = fileConfiguration;
-        //set to zero since its not been cached yet
-        this.ID = 0;
-        //cache ID value
-        this.ID = getID();
+        /*
+        Add hashmap for caching data
+         */
     }
     public String getName() {
         return name;
@@ -32,7 +30,7 @@ public class Config {
         return fileConfiguration;
     }
 
-    public int getNextID(){
+    /*public int getNextID(){
         setID(getID() + 1);
         return this.ID;
     }
@@ -41,9 +39,9 @@ public class Config {
         if(this.ID ==0){
             //checks if the config even has an id
             if(this.fileConfiguration.contains("id")){
-            this.ID =this.fileConfiguration.getInt("id");
-            //check if the config also had 0 for its ID and update it if so
-            if(this.ID== 0){ setID(1); }
+                this.ID =this.fileConfiguration.getInt("id");
+                //check if the config also had 0 for its ID and update it if so
+                if(this.ID== 0){ setID(1); }
             }else {
                 //adds ID to the config
                 setID(1);
@@ -56,5 +54,6 @@ public class Config {
         fileConfiguration.set("id",id);
         Persistence.getConfigHandler().saveFile(this);
         this.ID = id;
-    }
+    }*/
 }
+
